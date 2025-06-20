@@ -1,5 +1,5 @@
 [workspace]
 members = [
     "mylib", 
-    "tokio-exec"
+    "executable"
 ]

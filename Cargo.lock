@@ -361,6 +361,7 @@ name = "mylib"
 version = "0.1.0"
 dependencies = [
  "flume",
+ "futures-lite",
  "futures-timer",
  "smol",
  "tokio",
@@ -579,6 +580,7 @@ name = "tokio-exec"
 version = "0.1.0"
 dependencies = [
  "mylib",
+ "smol",
  "tokio",
 ]
 
