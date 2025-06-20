@@ -13,7 +13,11 @@ pub struct InFlightMessage {
 
 /// An RPC client that can send requests and receive responses.
 /// It auto-correlates the request and response by message_id.
-/// It supports both async and sync requests.
+/// 
+/// `request()` returns a future that resolves to the response.
+/// `request_two()` returns a future that resolves to a tuple of two responses.
+/// 
+/// To use it sync, activate the `sync` feature and use the `mylib::sync` module.
 pub struct MyRpc {
     /// List of inflight requests/messages
     inflight_messages: Arc<Mutex<Vec<InFlightMessage>>>,
