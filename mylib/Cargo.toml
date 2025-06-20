@@ -7,16 +7,12 @@ edition = "2024"
 flume = {version = "0.11.1", default-features = false, features = [ "async" ] }
 futures-timer = "3.0.3"
 futures-lite = "2.0"
-smol = {version = "2.0.2", optional = true}
+async-io = {version = "2.4.1", optional = true}
 
 [dev-dependencies]
 tokio = {version = "1.45.1", features = ["full"]}
-smol = {version = "2.0.2"}
+async-io = {version = "2.4.1"}
 
 
 [features]
-
-default = [
-]
-
-sync = ["dep:smol"]
+sync = ["dep:async-io"]

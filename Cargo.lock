@@ -360,10 +360,10 @@ dependencies = [
 name = "mylib"
 version = "0.1.0"
 dependencies = [
+ "async-io",
  "flume",
  "futures-lite",
  "futures-timer",
- "smol",
  "tokio",
 ]
 

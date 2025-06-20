@@ -13,11 +13,11 @@ pub async fn say_hello(name: &str) {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use smol::block_on;
+    use async_io::block_on;
 
     #[test]
-    fn test_say_hello_smol() {
-        block_on(say_hello("smol"));
+    fn test_say_hello_async_io() {
+        block_on(say_hello("async_io"));
     }
 
 

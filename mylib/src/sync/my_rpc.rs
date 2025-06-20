@@ -5,12 +5,12 @@ use crate::asyn::my_rpc::Response;
 impl MyRpc {
     /// Request a response synchronously.
     pub fn request_sync(&mut self) -> Result<Response, String> {
-        smol::block_on(self.request())
+        async_io::block_on(self.request())
     }
 
     /// Request two responses synchronously.
     pub fn request_two_sync(&mut self) -> Result<(Response, Response), String> {
-        smol::block_on(self.request_two())
+        async_io::block_on(self.request_two())
     }
 }
 

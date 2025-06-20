@@ -17,15 +17,17 @@ async fn main() {
     mylib::asyn::say_hello("tokio").await;
 }
 
-/// Smol executor
+/// async_io executor
 fn main() {
-    smol::block_on(async {
-        mylib::asyn::say_hello("smol").await;
+    async_io::block_on(async {
+        mylib::asyn::say_hello("async_io").await;
     })
 }
 ```
 
-To use it sync, activate the `sync` feature and use the sync module.
+To use it sync, activate the `sync` feature and use the `mylib::sync` module. 
+Internally, this will add sync wrappers around the async functions and add the [async_io](https://github.com/smol-rs/async-io) to the library to execute it.
+This works well in combination with any other global async executor like tokio because async_io is only used to execute mylib async functions.
 
 ```toml
 mylib = {path = "../mylib", features = [ "sync" ] }
@@ -33,7 +35,7 @@ mylib = {path = "../mylib", features = [ "sync" ] }
 
 ```rust
 fn main() {
-    mylib::sync::say_hello("tokio");
+    mylib::sync::say_hello("sync");
 }
 ```
 
