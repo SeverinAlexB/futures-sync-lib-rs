@@ -39,5 +39,5 @@ fn main() {
 
 ### MyRpc Example
 
-The `MyRpc` struct represents a more example where request/responses are correlated.
+[MyRpc](./mylib/src/asyn/my_rpc.rs) struct represents a more example where request/responses are correlated.
 
